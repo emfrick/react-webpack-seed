@@ -4,6 +4,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
     ROOT: __dirname,
@@ -70,7 +71,18 @@ const config = (isProduction) => {
             new CleanWebpackPlugin(CLEAN_PATHS, {
                 root: PATHS.ROOT,
                 verbose: !isProduction
-            })
+            }),
+            new CopyWebpackPlugin([
+                {
+                    from: path.join(PATHS.SRC, 'assets'),
+                    to: isProduction ? path.join(PATHS.DIST, 'assets') : path.join(PATHS.BUILD, 'assets'),
+                    ignore: ['**/*.sass']
+                },
+                {
+                    from: path.join(PATHS.SRC, 'index.html'),
+                    to: isProduction ? path.join(PATHS.DIST, 'index.html') : path.join(PATHS.BUILD, 'index.html')
+                }
+            ])
         ],
         devServer: {
             contentBase: './',   // Allows static content to be hosted from this location

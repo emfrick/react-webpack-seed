@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reactLogo from './assets/images/react-logo.png';
-import './styles/base.sass';
+import './assets/styles/base.sass';
 
 let app = document.getElementById('app');
 
