@@ -4,9 +4,10 @@
   "description": "A React Webpack Seed Project",
   "main": "index.js",
   "scripts": {
-    "start": "webpack && http-server -p 8080",
+    "start": "webpack-dev-server --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --hot --inline"
+    "production": "webpack --env PRODUCTION",
+    "productiontest": "webpack --env PRODUCTION && http-server -p 8080"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
     "file-loader": "^0.11.2",
     "node-sass": "^4.5.3",
