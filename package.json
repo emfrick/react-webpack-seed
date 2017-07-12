@@ -6,8 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "production": "webpack --env PRODUCTION",
-    "productiontest": "webpack --env PRODUCTION && http-server -p 8080"
+    "dev": "webpack && http-server build -p 8080",
+    "prod": "webpack --env PRODUCTION",
+    "prod_serve": "webpack --env PRODUCTION && http-server dist -p 8080"
   },
   "author": "",
   "license": "ISC",
