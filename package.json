@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack && http-server build -p 8080",
     "prod": "webpack --env PRODUCTION",
-    "prod_serve": "webpack --env PRODUCTION && http-server dist -p 8080"
+    "prod_serve": "webpack --env PRODUCTION && http-server dist -p 8080",
+    "analyze": "webpack --env ANALYZE"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
     "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -29,6 +31,7 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.1.0",
+    "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {}
