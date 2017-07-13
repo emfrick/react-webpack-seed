@@ -123,5 +123,17 @@ module.exports = (env) => {
         );
     }
 
+    if (isProduction) {
+        configuration.plugins.push(            
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify('production')
+                }
+            }),
+            new webpack.optimize.UglifyJsPlugin(),
+            new webpack.optimize.AggressiveMergingPlugin()
+        )
+    }
+
     return configuration;
 }
